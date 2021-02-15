@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Language: ru_RU\n"
+
+#: mainunit.scompletion
+msgid "Completion..."
+msgstr "Завершение..."
+
+#: mainunit.scompress
+msgctxt "mainunit.scompress"
+msgid "Compress"
+msgstr ""
+
+#: mainunit.scompressionwarning
+msgctxt "mainunit.scompressionwarning"
+msgid "Do not close the window! Wait for the end of the process!"
+msgstr "Не закрывайте окно! Дождитесь окончания процесса!"
+
+#: mainunit.sfilenotfound
+msgid "The *.vdi file not found!"
+msgstr "Файл *.vdi не найден!"
+
+#: mainunit.swarning1
+msgid "The user \""
+msgstr "Пользователь \""
+
+#: mainunit.swarning2
+msgid ""
+"\" is not in groups \"disk\", \"vboxusers\" and \"vboxsf\"\n"
+"\n"
+"Run the command in terminal (su/password):\n"
+"usermod -a -G disk,vboxusers,vboxsf $USER\n"
+"\n"
+"...and reboot your computer to apply privileges!\n"
+msgstr ""
+"\" не в группах \"disk\", \"vboxusers\" и \"vboxsf\"\n"
+"\n"
+"Скомандуйте в терминале (su/password):\n"
+"usermod -a -G disk,vboxusers,vboxsf $USER\n"
+"\n"
+"...и перезагрузите компьютер для применения привилегий!\n"
+
+#: tmainform.caption
+msgid "VirtualBox VDI Compressor v0.7"
+msgstr ""
+
+#: tmainform.clonecheckbox.caption
+msgid "Clone with the original UUID when compressed"
+msgstr "Клонировать с оригинальным UUID при сжатии"
+
+#: tmainform.cloneedit.text
+msgctxt "tmainform.cloneedit.text"
+msgid "..."
+msgstr ""
+
+#: tmainform.compressbtn.caption
+msgctxt "tmainform.compressbtn.caption"
+msgid "Compress"
+msgstr "Сжать"
+
+#: tmainform.editbutton2.buttoncaption
+msgctxt "tmainform.editbutton2.buttoncaption"
+msgid "..."
+msgstr ""
+
+#: tmainform.label1.caption
+msgid ""
+"License: GPLv3\n"
+"Author: alex_q_2000 (C) 2020\n"
+msgstr ""
+"Лицензия: GPLv3\n"
+"Автор: alex_q_2000 (C) 2020\n"

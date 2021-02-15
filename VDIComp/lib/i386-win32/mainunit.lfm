@@ -1,0 +1,98 @@
+object MainForm: TMainForm
+  Left = 353
+  Height = 204
+  Top = 182
+  Width = 598
+  Caption = 'VirtualBox VDI Compressor'
+  ClientHeight = 204
+  ClientWidth = 598
+  SessionProperties = 'Width;Height;EditButton1.Text;EditButton2.Text'
+  LCLVersion = '1.8.4.0'
+  object EditButton1: TEditButton
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 8
+    Height = 25
+    Top = 43
+    Width = 580
+    Anchors = [akLeft, akRight]
+    BorderSpacing.Right = 10
+    ButtonCaption = '...'
+    ButtonWidth = 23
+    MaxLength = 0
+    NumGlyphs = 1
+    OnButtonClick = EditButton1ButtonClick
+    PasswordChar = #0
+    TabOrder = 0
+    Text = 'EditButton1'
+  end
+  object Label1: TLabel
+    AnchorSideBottom.Control = EditButton1
+    Left = 8
+    Height = 17
+    Top = 23
+    Width = 101
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Bottom = 3
+    Caption = 'VboxManage.exe'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    AnchorSideBottom.Control = EditButton2
+    Left = 10
+    Height = 17
+    Top = 96
+    Width = 49
+    Anchors = [akLeft, akBottom]
+    BorderSpacing.Bottom = 3
+    Caption = '*.vdi file:'
+    ParentColor = False
+  end
+  object EditButton2: TEditButton
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 10
+    Height = 25
+    Top = 116
+    Width = 578
+    Anchors = [akLeft, akRight]
+    BorderSpacing.Right = 10
+    ButtonCaption = '...'
+    ButtonWidth = 23
+    MaxLength = 0
+    NumGlyphs = 1
+    OnButtonClick = EditButton2ButtonClick
+    PasswordChar = #0
+    TabOrder = 1
+    Text = 'EditButton2'
+  end
+  object BitBtn1: TBitBtn
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 478
+    Height = 28
+    Top = 166
+    Width = 110
+    Anchors = [akRight, akBottom]
+    BorderSpacing.Right = 10
+    BorderSpacing.Bottom = 10
+    Caption = 'Compress'
+    Default = True
+    Kind = bkOK
+    ModalResult = 1
+    OnClick = BitBtn1Click
+    TabOrder = 2
+  end
+  object OpenDialog1: TOpenDialog
+    Filter = 'VboxManage|*.exe'
+    left = 184
+    top = 5
+  end
+  object XMLPropStorage1: TXMLPropStorage
+    StoredValues = <>
+    left = 337
+    top = 10
+  end
+end

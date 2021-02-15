@@ -1,0 +1,64 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: mainunit.scompletion
+msgid "Completion..."
+msgstr ""
+
+#: mainunit.scompress
+msgctxt "mainunit.scompress"
+msgid "Compress"
+msgstr ""
+
+#: mainunit.scompressionwarning
+msgctxt "mainunit.scompressionwarning"
+msgid "Do not close the window! Wait for the end of the process!"
+msgstr ""
+
+#: mainunit.sfilenotfound
+msgid "The *.vdi file not found!"
+msgstr ""
+
+#: mainunit.swarning1
+msgid "The user \""
+msgstr ""
+
+#: mainunit.swarning2
+msgid ""
+"\" is not in groups \"disk\", \"vboxusers\" and \"vboxsf\"\n"
+"\n"
+"Run the command in terminal (su/password):\n"
+"usermod -a -G disk,vboxusers,vboxsf $USER\n"
+"\n"
+"...and reboot your computer to apply privileges!\n"
+msgstr ""
+
+#: tmainform.caption
+msgid "VirtualBox VDI Compressor v0.7"
+msgstr ""
+
+#: tmainform.clonecheckbox.caption
+msgid "Clone with the original UUID when compressed"
+msgstr ""
+
+#: tmainform.cloneedit.text
+msgctxt "tmainform.cloneedit.text"
+msgid "..."
+msgstr ""
+
+#: tmainform.compressbtn.caption
+msgctxt "tmainform.compressbtn.caption"
+msgid "Compress"
+msgstr ""
+
+#: tmainform.editbutton2.buttoncaption
+msgctxt "tmainform.editbutton2.buttoncaption"
+msgid "..."
+msgstr ""
+
+#: tmainform.label1.caption
+msgid ""
+"License: GPLv3\n"
+"Author: alex_q_2000 (C) 2020\n"
+msgstr ""
+
