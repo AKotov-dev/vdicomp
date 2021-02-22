@@ -1,5 +1,7 @@
 **VDIComp** - compresses the `*.vdi` file of the VirtualBox
 
+Dependencies: `virtualbox`
+
 Before compressing, the VM must be "cleaned up" from the inside:
 - For Linux virtual machine, go to the `su/password` terminal and run:  
 `dd if=/dev/zero of=/zerofile bs=4096 status=progress; rm -f /zerofile`
