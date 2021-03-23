@@ -1,5 +1,5 @@
-VDIComp - compresses the `*.vdi` file of the VirtualBox
----
+**VDIComp** - compresses the `*.vdi` file of the VirtualBox
+
 Dependencies: `virtualbox`
 
 Before compressing, the VM must be "cleaned up" from the inside:
