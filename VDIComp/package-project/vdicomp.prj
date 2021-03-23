@@ -2,10 +2,10 @@
 name=vdicomp
 
 [VERSION]
-version=0.7
+version=0.8
 
 [RELEASE]
-release=0.mrx7
+release=0.mrx8
 
 [GROUP]
 group=Emulators
@@ -21,16 +21,16 @@ group=Emulators
 maintainer=Alex Kotov
 
 [VENDOR]
-vendor=alex_q_2000 (C) 2020
+vendor=alex_q_2000 (C) 2021
 
 [SUMMARY]
 summary=VirtualBox VDI Compressor
 
 [URLCOPY]
-urlcopy=https://cloud.mail.ru/public/4sV2/3R55Tc2va
+urlcopy=https://github.com/AKotov-dev/vdicomp
 
 [LICENSE]
-license=GPLv3+
+license=GPLv3
 
 [DEPS]
 deps=virtualbox sakura
@@ -44,28 +44,19 @@ noarch=0
 [SIGN]
 sign=0
 
+[DEB]
+deb=0
+
 [FILES]
 0=/usr/share/VDIComp/
 1=/usr/share/applications/vdicomp.desktop
 2=/usr/share/doc/vdicomp/
 
-[AFTERINSTALL]
-0=#ldconfig
-1=#update-desktop-database -q /usr/share/applications
-2=#update-mime-database /usr/share/mime
-3=#gtk-update-icon-cache -q -f /usr/share/icons/hicolor
-
-[AFTERREMOVE]
-0=#ldconfig
-1=#update-desktop-database -q /usr/share/applications
-2=#update-mime-database /usr/share/mime
-3=#gtk-update-icon-cache -q -f /usr/share/icons/hicolor
-
 [URL32]
-url32=https://cloud.mail.ru/public/4sV2/3R55Tc2va
+url32=https://github.com/AKotov-dev/vdicomp
 
 [URL64]
-url64=https://cloud.mail.ru/public/4sV2/3R55Tc2va
+url64=https://github.com/AKotov-dev/vdicomp
 
 [PROGRAMNAME]
 programname=VDIComp
@@ -74,11 +65,14 @@ programname=VDIComp
 devtool=Lazarus
 
 [TOOLVERSION]
-toolversion=1.8.4
+toolversion=2.0.10
 
 [INFO]
-0=For the reproduction of the program is needed by Lazarus-1.8.4
+0=For the reproduction of the program is needed by Lazarus
 1=
-2=v0.7-0
-3=+ Cloning a VDI with the original UUID when compressed
-4=+ Moving the shortcut to the "Emulators" menu section
+2=v0.8-0
+3=+Show Input & Output files size
+4=
+5=v0.7-0
+6=+ Cloning a VDI with the original UUID when compressed
+7=+ Moving the shortcut to the "Emulators" menu section

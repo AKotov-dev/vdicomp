@@ -34,7 +34,7 @@ msgid ""
 msgstr ""
 
 #: tmainform.caption
-msgid "VirtualBox VDI Compressor v0.7"
+msgid "VirtualBox VDI Compressor v0.8"
 msgstr ""
 
 #: tmainform.clonecheckbox.caption
@@ -59,6 +59,26 @@ msgstr ""
 #: tmainform.label1.caption
 msgid ""
 "License: GPLv3\n"
-"Author: alex_q_2000 (C) 2020\n"
+"Author: alex_q_2000 (C) 2021\n"
+msgstr ""
+
+#: tmainform.label2.caption
+msgctxt "tmainform.label2.caption"
+msgid "Size (MB):"
+msgstr ""
+
+#: tmainform.label3.caption
+msgctxt "tmainform.label3.caption"
+msgid "0"
+msgstr ""
+
+#: tmainform.label4.caption
+msgctxt "tmainform.label4.caption"
+msgid "Size (MB):"
+msgstr ""
+
+#: tmainform.label5.caption
+msgctxt "tmainform.label5.caption"
+msgid "0"
 msgstr ""
 

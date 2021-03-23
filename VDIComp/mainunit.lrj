@@ -1,8 +1,12 @@
 {"version":1,"strings":[
-{"hash":191750775,"name":"tmainform.caption","sourcebytes":[86,105,114,116,117,97,108,66,111,120,32,86,68,73,32,67,111,109,112,114,101,115,115,111,114,32,118,48,46,55],"value":"VirtualBox VDI Compressor v0.7"},
+{"hash":191750776,"name":"tmainform.caption","sourcebytes":[86,105,114,116,117,97,108,66,111,120,32,86,68,73,32,67,111,109,112,114,101,115,115,111,114,32,118,48,46,56],"value":"VirtualBox VDI Compressor v0.8"},
 {"hash":12558,"name":"tmainform.editbutton2.buttoncaption","sourcebytes":[46,46,46],"value":"..."},
 {"hash":105351171,"name":"tmainform.compressbtn.caption","sourcebytes":[67,111,109,112,114,101,115,115],"value":"Compress"},
-{"hash":204234368,"name":"tmainform.label1.caption","sourcebytes":[76,105,99,101,110,115,101,58,32,71,80,76,118,51,10,65,117,116,104,111,114,58,32,97,108,101,120,95,113,95,50,48,48,48,32,40,67,41,32,50,48,50,48],"value":"License: GPLv3\nAuthor: alex_q_2000 (C) 2020"},
+{"hash":204234369,"name":"tmainform.label1.caption","sourcebytes":[76,105,99,101,110,115,101,58,32,71,80,76,118,51,10,65,117,116,104,111,114,58,32,97,108,101,120,95,113,95,50,48,48,48,32,40,67,41,32,50,48,50,49],"value":"License: GPLv3\nAuthor: alex_q_2000 (C) 2021"},
 {"hash":144913668,"name":"tmainform.clonecheckbox.caption","sourcebytes":[67,108,111,110,101,32,119,105,116,104,32,116,104,101,32,111,114,105,103,105,110,97,108,32,85,85,73,68,32,119,104,101,110,32,99,111,109,112,114,101,115,115,101,100],"value":"Clone with the original UUID when compressed"},
-{"hash":12558,"name":"tmainform.cloneedit.text","sourcebytes":[46,46,46],"value":"..."}
+{"hash":12558,"name":"tmainform.cloneedit.text","sourcebytes":[46,46,46],"value":"..."},
+{"hash":120239562,"name":"tmainform.label2.caption","sourcebytes":[83,105,122,101,32,40,77,66,41,58],"value":"Size (MB):"},
+{"hash":48,"name":"tmainform.label3.caption","sourcebytes":[48],"value":"0"},
+{"hash":120239562,"name":"tmainform.label4.caption","sourcebytes":[83,105,122,101,32,40,77,66,41,58],"value":"Size (MB):"},
+{"hash":48,"name":"tmainform.label5.caption","sourcebytes":[48],"value":"0"}
 ]}

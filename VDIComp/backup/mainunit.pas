@@ -20,8 +20,13 @@ type
     EditButton2: TEditButton;
     IniPropStorage1: TIniPropStorage;
     Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
     OpenDialog1: TOpenDialog;
     Timer1: TTimer;
+    Timer2: TTimer;
     procedure CloneCheckBoxChange(Sender: TObject);
     procedure CompressBtnClick(Sender: TObject);
     procedure EditButton1ButtonClick(Sender: TObject);
@@ -34,6 +39,7 @@ type
     procedure StartProcess(command, terminal: string);
     procedure Timer1Timer(Sender: TObject);
     procedure SakuraConf;
+    procedure Timer2Timer(Sender: TObject);
 
   private
 
@@ -149,6 +155,32 @@ begin
   end;
 end;
 
+//Контроль размера файлов
+procedure TMainForm.Timer2Timer(Sender: TObject);
+var
+  S: ansistring;
+begin
+  //Входной файл *.vdi
+  if FileExists(EditButton2.Text) then
+  begin
+    RunCommand('/bin/bash', ['-c', 'du -sm "' + EditButton2.Text +
+      '"' + ' | awk ' + '''' + '{ print $1 }' + ''''], S);
+    Label3.Caption := Trim(S);
+  end
+  else
+    Label3.Caption := '0';
+
+  //Выходной файл *-Clone.vdi
+  if FileExists(CloneEdit.Text) then
+  begin
+    RunCommand('/bin/bash', ['-c', 'du -sm "' + CloneEdit.Text +
+      '"' + ' | awk ' + '''' + '{ print $1 }' + ''''], S);
+    Label5.Caption := Trim(S);
+  end
+  else
+    Label5.Caption := '0';
+end;
+
 procedure TMainForm.Timer1Timer(Sender: TObject);
 var
   S, V: ansistring;
@@ -221,12 +253,12 @@ begin
       '" | grep "UUID:" | head -n1 | awk ' + '''' + '{ print $2 }' + '''' + ')');
 
     //Клонируем в DiskName.vdi-Clone.vdi
-    Str.Add('VBoxManage clonemedium "' + EditButton2.Text +
-      '" "' + EditButton2.Text + '"-Сlone.vdi --format VDI');
+    Str.Add('VBoxManage clonemedium "' + EditButton2.Text + '" "' +
+      EditButton2.Text + '"-Сlone.vdi --format VDI');
 
     //Присваиваем родной UUID диску-клону
-    Str.Add('VBoxManage internalcommands sethduuid "' +
-      EditButton2.Text + '-Сlone.vdi" $HDUUID');
+    Str.Add('VBoxManage internalcommands sethduuid "' + EditButton2.Text +
+      '-Сlone.vdi" $HDUUID');
 
     //Удаляем из списка знакомых носителей, чтобы не писать UUID повторно
     Str.Add('if [[ -n $(VBoxManage list hdds | grep "' + EditButton2.Text +
@@ -255,7 +287,7 @@ end;
 procedure TMainForm.CloneCheckBoxChange(Sender: TObject);
 begin
   if CloneCheckBox.Checked and (EditButton2.Text <> '') then
-    CloneEdit.Text := EditButton2.Text + '-Clone.vdi'
+    CloneEdit.Text := EditButton2.Text + '-Сlone.vdi'
   else
     CloneEdit.Text := '...';
 end;
@@ -263,11 +295,14 @@ end;
 procedure TMainForm.EditButton2ButtonClick(Sender: TObject);
 begin
   if OpenDialog1.Execute then
+  begin
     EditButton2.Text := OpenDialog1.FileName;
-  if CloneCheckBox.Checked then
-    CloneEdit.Text := EditButton2.Text + '-Clone.vdi'
-  else
-    CloneEdit.Text := '...';
+
+    if CloneCheckBox.Checked then
+      CloneEdit.Text := EditButton2.Text + '-Сlone.vdi'
+    else
+      CloneEdit.Text := '...';
+  end;
 end;
 
 procedure TMainForm.EditButton2KeyDown(Sender: TObject; var Key: word;
