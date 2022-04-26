@@ -41,17 +41,17 @@ msgid ""
 "Run the command in terminal (su/password):\n"
 "usermod -a -G disk,vboxusers,vboxsf $USER\n"
 "\n"
-"...and reboot your computer to apply privileges!\n"
+"...and reboot your computer to apply privileges!"
 msgstr ""
 "\" не в группах \"disk\", \"vboxusers\" и \"vboxsf\"\n"
 "\n"
 "Скомандуйте в терминале (su/password):\n"
 "usermod -a -G disk,vboxusers,vboxsf $USER\n"
 "\n"
-"...и перезагрузите компьютер для применения привилегий!\n"
+"...и перезагрузите компьютер для применения привилегий!"
 
 #: tmainform.caption
-msgid "VirtualBox VDI Compressor v0.8"
+msgid "VirtualBox VDI Compressor"
 msgstr ""
 
 #: tmainform.clonecheckbox.caption
@@ -76,10 +76,10 @@ msgstr ""
 #: tmainform.label1.caption
 msgid ""
 "License: GPLv3\n"
-"Author: alex_q_2000 (C) 2021\n"
+"Author: alex_q_2000 (C) 2021"
 msgstr ""
 "Лицензия: GPLv3\n"
-"Автор: alex_q_2000 (C) 2021\n"
+"Автор: alex_q_2000 (C) 2021"
 
 #: tmainform.label2.caption
 msgctxt "tmainform.label2.caption"
@@ -100,4 +100,3 @@ msgstr "Размер (МБ):"
 msgctxt "tmainform.label5.caption"
 msgid "0"
 msgstr ""
-

@@ -2,7 +2,7 @@
 <CONFIG>
   <ProjectSession>
     <PathDelim Value="\"/>
-    <Version Value="11"/>
+    <Version Value="12"/>
     <BuildModes Count="1" Active="Release">
       <Item1 Name="Release">
         <CompilerOptions>
@@ -24,6 +24,7 @@
           <Linking>
             <Debugging>
               <GenerateDebugInfo Value="False"/>
+              <DebugInfoType Value="dsDwarf2Set"/>
             </Debugging>
             <LinkSmart Value="True"/>
             <Options>
@@ -50,14 +51,14 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
-        <TopLine Value="157"/>
-        <CursorPos X="31" Y="178"/>
+        <TopLine Value="46"/>
+        <CursorPos X="30" Y="49"/>
         <UsageCount Value="65"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
     </Units>
-    <JumpHistory Count="13" HistoryIndex="12">
+    <JumpHistory Count="17" HistoryIndex="16">
       <Position1>
         <Filename Value="mainunit.pas"/>
         <Caret Line="280" Column="5" TopLine="267"/>
@@ -110,10 +111,26 @@
         <Filename Value="mainunit.pas"/>
         <Caret Line="163" Column="69" TopLine="158"/>
       </Position13>
+      <Position14>
+        <Filename Value="mainunit.pas"/>
+        <Caret Line="4" Column="45"/>
+      </Position14>
+      <Position15>
+        <Filename Value="mainunit.pas"/>
+        <Caret Line="143" Column="50" TopLine="127"/>
+      </Position15>
+      <Position16>
+        <Filename Value="mainunit.pas"/>
+        <Caret Line="152" Column="31" TopLine="127"/>
+      </Position16>
+      <Position17>
+        <Filename Value="mainunit.pas"/>
+        <Caret Line="153" Column="93" TopLine="127"/>
+      </Position17>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
-      <Modes Count="0" ActiveMode="default"/>
+      <Modes ActiveMode="default"/>
     </RunParams>
   </ProjectSession>
 </CONFIG>

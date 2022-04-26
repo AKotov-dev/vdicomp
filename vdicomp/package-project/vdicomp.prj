@@ -2,10 +2,10 @@
 name=vdicomp
 
 [VERSION]
-version=0.8
+version=0.9
 
 [RELEASE]
-release=0.mrx8
+release=0.mrx9
 
 [GROUP]
 group=Emulators
@@ -48,7 +48,7 @@ sign=0
 deb=0
 
 [FILES]
-0=/usr/share/VDIComp/
+0=/usr/share/vdicomp/
 1=/usr/share/applications/vdicomp.desktop
 2=/usr/share/doc/vdicomp/
 
@@ -65,14 +65,18 @@ programname=VDIComp
 devtool=Lazarus
 
 [TOOLVERSION]
-toolversion=2.0.10
+toolversion=2.2.0
 
 [INFO]
 0=For the reproduction of the program is needed by Lazarus
 1=
-2=v0.8-0
-3=+Show Input & Output files size
-4=
-5=v0.7-0
-6=+ Cloning a VDI with the original UUID when compressed
-7=+ Moving the shortcut to the "Emulators" menu section
+2=v0.9
+3=+ changing the /usr/share/vdicomp directory
+4=+ the prefix of rpm packages has been changed to mrx9
+5=
+6=v0.8-0
+7=+Show Input & Output files size
+8=
+9=v0.7-0
+10=+ Cloning a VDI with the original UUID when compressed
+11=+ Moving the shortcut to the "Emulators" menu section

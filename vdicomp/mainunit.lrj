@@ -1,5 +1,5 @@
 {"version":1,"strings":[
-{"hash":191750776,"name":"tmainform.caption","sourcebytes":[86,105,114,116,117,97,108,66,111,120,32,86,68,73,32,67,111,109,112,114,101,115,115,111,114,32,118,48,46,56],"value":"VirtualBox VDI Compressor v0.8"},
+{"hash":44512946,"name":"tmainform.caption","sourcebytes":[86,105,114,116,117,97,108,66,111,120,32,86,68,73,32,67,111,109,112,114,101,115,115,111,114],"value":"VirtualBox VDI Compressor"},
 {"hash":12558,"name":"tmainform.editbutton2.buttoncaption","sourcebytes":[46,46,46],"value":"..."},
 {"hash":105351171,"name":"tmainform.compressbtn.caption","sourcebytes":[67,111,109,112,114,101,115,115],"value":"Compress"},
 {"hash":204234369,"name":"tmainform.label1.caption","sourcebytes":[76,105,99,101,110,115,101,58,32,71,80,76,118,51,10,65,117,116,104,111,114,58,32,97,108,101,120,95,113,95,50,48,48,48,32,40,67,41,32,50,48,50,49],"value":"License: GPLv3\nAuthor: alex_q_2000 (C) 2021"},

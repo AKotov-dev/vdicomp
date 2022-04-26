@@ -14,6 +14,7 @@ uses
 
 begin
   RequireDerivedFormResource:=True;
+  Application.Title:='VirtualBox VDI Compressor v0.9';
   Application.Initialize;
   Application.CreateForm(TMainForm, MainForm);
   Application.Run;

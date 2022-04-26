@@ -149,7 +149,7 @@ begin
       MkDir(GetEnvironmentVariable('HOME') + '/.config/sakura');
 
     S := TStringList.Create;
-    S.LoadFromFile('/usr/share/VDIComp/sakura-vdicomp.conf');
+    S.LoadFromFile('/usr/share/vdicomp/sakura-vdicomp.conf');
     S.SaveToFile(GetEnvironmentVariable('HOME') + '/.config/sakura/sakura-vdicomp.conf');
     S.Free;
   end;
@@ -329,6 +329,7 @@ end;
 
 procedure TMainForm.FormShow(Sender: TObject);
 begin
+  MainForm.Caption := Application.Title;
   CompressBtn.Caption := SCompress;
 end;
 

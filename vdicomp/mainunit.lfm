@@ -1,10 +1,10 @@
 object MainForm: TMainForm
-  Left = 302
+  Left = 311
   Height = 205
-  Top = 127
+  Top = 123
   Width = 561
   ActiveControl = EditButton2
-  Caption = 'VirtualBox VDI Compressor v0.8'
+  Caption = 'VirtualBox VDI Compressor'
   ClientHeight = 205
   ClientWidth = 561
   OnClose = FormClose
@@ -12,7 +12,7 @@ object MainForm: TMainForm
   OnShow = FormShow
   Position = poDefault
   SessionProperties = 'CloneCheckBox.Checked;EditButton2.Text;Height;Left;PrioCheckBox.Checked;Top;Width;CloneEdit.Text'
-  LCLVersion = '2.0.10.0'
+  LCLVersion = '2.2.0.4'
   object Bevel1: TBevel
     Left = 0
     Height = 205
@@ -54,21 +54,20 @@ object MainForm: TMainForm
   object Label1: TLabel
     AnchorSideBottom.Side = asrBottom
     Left = 10
-    Height = 24
-    Top = 174
+    Height = 28
+    Top = 170
     Width = 165
     Anchors = [akLeft, akBottom]
     Caption = 'License: GPLv3'#10'Author: alex_q_2000 (C) 2021'
     Font.Color = clGray
     Font.Height = -11
     Font.Name = 'Sans'
-    ParentColor = False
     ParentFont = False
   end
   object CloneCheckBox: TCheckBox
     Left = 8
     Height = 32
-    Top = 134
+    Top = 133
     Width = 317
     Anchors = [akLeft]
     Caption = 'Clone with the original UUID when compressed'
@@ -82,7 +81,7 @@ object MainForm: TMainForm
     AnchorSideRight.Side = asrBottom
     Left = 10
     Height = 36
-    Top = 72
+    Top = 70
     Width = 543
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Right = 8
@@ -94,14 +93,13 @@ object MainForm: TMainForm
     AnchorSideTop.Control = EditButton2
     AnchorSideTop.Side = asrBottom
     Left = 10
-    Height = 13
+    Height = 15
     Top = 54
     Width = 60
     BorderSpacing.Top = 2
     Caption = 'Size (MB):'
     Font.Height = -12
     Font.Name = 'Sans'
-    ParentColor = False
     ParentFont = False
   end
   object Label3: TLabel
@@ -109,7 +107,7 @@ object MainForm: TMainForm
     AnchorSideLeft.Side = asrBottom
     AnchorSideTop.Control = Label2
     Left = 72
-    Height = 13
+    Height = 15
     Top = 54
     Width = 8
     BorderSpacing.Left = 2
@@ -117,21 +115,19 @@ object MainForm: TMainForm
     Font.Color = clRed
     Font.Height = -12
     Font.Name = 'Sans'
-    ParentColor = False
     ParentFont = False
   end
   object Label4: TLabel
     AnchorSideTop.Control = CloneEdit
     AnchorSideTop.Side = asrBottom
     Left = 10
-    Height = 13
-    Top = 110
+    Height = 15
+    Top = 108
     Width = 60
     BorderSpacing.Top = 2
     Caption = 'Size (MB):'
     Font.Height = -12
     Font.Name = 'Sans'
-    ParentColor = False
     ParentFont = False
   end
   object Label5: TLabel
@@ -139,15 +135,14 @@ object MainForm: TMainForm
     AnchorSideLeft.Side = asrBottom
     AnchorSideTop.Control = Label4
     Left = 72
-    Height = 13
-    Top = 110
+    Height = 15
+    Top = 108
     Width = 8
     BorderSpacing.Left = 2
     Caption = '0'
     Font.Color = clGreen
     Font.Height = -12
     Font.Name = 'Sans'
-    ParentColor = False
     ParentFont = False
   end
   object OpenDialog1: TOpenDialog
