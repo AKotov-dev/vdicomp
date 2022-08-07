@@ -1,6 +1,6 @@
 **VDIComp** - compresses the `*.vdi` file of the VirtualBox
 
-Dependencies: `virtualbox`
+Dependencies: `virtualbox xterm gtk2`
 
 Before compressing, the VM must be "cleaned up" from the inside:
 - For Linux virtual machine, go to the `su/password` terminal and run:  
@@ -14,6 +14,6 @@ Before compressing, the VM must be "cleaned up" from the inside:
 
 The `VDIComp` startup shortcut is located in the `Menu-Emulators`.
 
-Made and tested in Mageia Linux-7/8.
+Made and tested in Mageia Linux-8/9.
 
 ![](https://github.com/AKotov-dev/vdicomp/blob/main/ScreenShot.png)

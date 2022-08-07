@@ -38,7 +38,6 @@ type
     procedure FormShow(Sender: TObject);
     procedure StartProcess(command, terminal: string);
     procedure Timer1Timer(Sender: TObject);
-    procedure SakuraConf;
     procedure Timer2Timer(Sender: TObject);
 
   private
@@ -110,19 +109,29 @@ begin
   Application.ProcessMessages;
   ExProcess := TProcess.Create(nil);
   try
-    ExProcess.Executable := terminal;  //bash или sakura
+    ExProcess.Executable := terminal;  //bash или xterm
     if terminal <> 'bash' then
     begin
-      ExProcess.Parameters.Add('--font');
+      ExProcess.Parameters.Add('-xrm');
+      ExProcess.Parameters.Add('XTerm*allowTitleOps:false');
+      ExProcess.Parameters.Add('-xrm');
+      ExProcess.Parameters.Add('XTerm*cursorColor:red');
+      ExProcess.Parameters.Add('-xrm');
+      ExProcess.Parameters.Add('XTerm*cursorBlink:true');
+
+      ExProcess.Parameters.Add('-fa');
+      ExProcess.Parameters.Add('monospace');
+      ExProcess.Parameters.Add('-fs');
       ExProcess.Parameters.Add('9');
-      ExProcess.Parameters.Add('--columns');
-      ExProcess.Parameters.Add('85');
-      ExProcess.Parameters.Add('--rows');
-      ExProcess.Parameters.Add('8');
-      ExProcess.Parameters.Add('--title');
+
+      ExProcess.Parameters.Add('-T');
       ExProcess.Parameters.Add(SCompressionWarning);
-      ExProcess.Parameters.Add('--config-file=sakura-vdicomp.conf');
-      ExProcess.Parameters.Add('--execute');
+
+      ExProcess.Parameters.Add('-g');
+      ExProcess.Parameters.Add('85x8+' + IntToStr(MainForm.Left) +
+        '+' + IntToStr(MainForm.Top + MainForm.Height + 40));
+
+      ExProcess.Parameters.Add('-e');
     end
     else
       ExProcess.Parameters.Add('-c');
@@ -133,25 +142,6 @@ begin
   finally
     ExProcess.Free;
     Screen.Cursor := crDefault;
-  end;
-end;
-
-//Конфигурация терминала sakura
-procedure TMainForm.SakuraConf;
-var
-  S: TStringList;
-begin
-  //Проверяем наличие конфига; Если нет - создаём по шаблону...
-  if not FileExists(GetEnvironmentVariable('HOME') +
-    '/.config/sakura/sakura-vdicomp.conf') then
-  begin
-    if not DirectoryExists(GetEnvironmentVariable('HOME') + '/.config/sakura') then
-      MkDir(GetEnvironmentVariable('HOME') + '/.config/sakura');
-
-    S := TStringList.Create;
-    S.LoadFromFile('/usr/share/vdicomp/sakura-vdicomp.conf');
-    S.SaveToFile(GetEnvironmentVariable('HOME') + '/.config/sakura/sakura-vdicomp.conf');
-    S.Free;
   end;
 end;
 
@@ -185,7 +175,7 @@ procedure TMainForm.Timer1Timer(Sender: TObject);
 var
   S, V: ansistring;
 begin
-  RunCommand('/bin/bash', ['-c', 'pidof sakura'], S);
+  RunCommand('/bin/bash', ['-c', 'pidof xterm'], S);
   RunCommand('/bin/bash', ['-c', 'pidof VBoxSVC'], V);
 
   if (S = '') and (V <> '') then
@@ -227,9 +217,6 @@ begin
       mtWarning, [mbOK], 0);
     Exit;
   end;
-
-  //Конфигурируем терминал Sakura
-  SakuraConf;
 
   //Создаём пускач компрессии
   Str := TStringList.Create;
@@ -277,7 +264,7 @@ begin
 
   //Запускаем компрессию
   StartProcess(GetEnvironmentVariable('HOME') + '/.config/vdicomp/compress.sh',
-    'sakura');
+    'xterm');
 
   //Запуск опроса состояния
   CompressBtn.Enabled := False;
@@ -314,7 +301,7 @@ end;
 procedure TMainForm.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 begin
   StartProcess('if [[ -n $(pidof VBoxSVC) ]]; then killall VBoxSVC; fi', 'bash');
-  StartProcess('if [[ -n $(pidof sakura) ]]; then killall sakura; fi', 'bash');
+  StartProcess('if [[ -n $(pidof xterm) ]]; then killall xterm; fi', 'bash');
 end;
 
 procedure TMainForm.FormCreate(Sender: TObject);

@@ -2,7 +2,7 @@
 name=vdicomp
 
 [VERSION]
-version=0.9
+version=1.0
 
 [RELEASE]
 release=0.mrx9
@@ -33,7 +33,7 @@ urlcopy=https://github.com/AKotov-dev/vdicomp
 license=GPLv3
 
 [DEPS]
-deps=virtualbox sakura
+deps=virtualbox xterm gtk2
 
 [META]
 meta=0
@@ -70,13 +70,17 @@ toolversion=2.2.0
 [INFO]
 0=For the reproduction of the program is needed by Lazarus
 1=
-2=v0.9
-3=+ changing the /usr/share/vdicomp directory
-4=+ the prefix of rpm packages has been changed to mrx9
+2=v1.0
+3=+ rpm: added gtk2 dependency (for GNOME)
+4=+ replacing sakura terminal with xterm (bug: https://github.com/dabisu/sakura/issues/16)
 5=
-6=v0.8-0
-7=+Show Input & Output files size
-8=
-9=v0.7-0
-10=+ Cloning a VDI with the original UUID when compressed
-11=+ Moving the shortcut to the "Emulators" menu section
+6=v0.9
+7=+ changing the /usr/share/vdicomp directory
+8=+ the prefix of rpm packages has been changed to mrx9
+9=
+10=v0.8-0
+11=+Show Input & Output files size
+12=
+13=v0.7-0
+14=+ Cloning a VDI with the original UUID when compressed
+15=+ Moving the shortcut to the "Emulators" menu section
