@@ -46,7 +46,7 @@ type
 
   end;
 
-//Ресурсы перевода
+  //Ресурсы перевода
 resourcestring
   SWarning1 = 'The user "';
   SWarning2 = '" is not in groups "disk", "vboxusers" and "vboxsf"' +
@@ -124,17 +124,13 @@ begin
       ExProcess.Parameters.Add('-fs');
       ExProcess.Parameters.Add('9');
 
-
-
-      {ExProcess.Parameters.Add('-xrm');
-      ExProcess.Parameters.Add('XTerm*font:-*-courier-bold-r-normal-*-14-100-100-100-m-*-koi8-*');
-     }
-
       ExProcess.Parameters.Add('-T');
       ExProcess.Parameters.Add(SCompressionWarning);
+
       ExProcess.Parameters.Add('-g');
-      ExProcess.Parameters.Add('85x8+' + IntToStr(MainForm.Left) +
+      ExProcess.Parameters.Add('90x8+' + IntToStr(MainForm.Left) +
         '+' + IntToStr(MainForm.Top + MainForm.Height + 40));
+
       ExProcess.Parameters.Add('-e');
     end
     else
@@ -164,7 +160,7 @@ begin
   else
     Label3.Caption := '0';
 
-  //Выходной файл *-Clone.vdi
+  //Выходной файл *-Compressed.vdi
   if FileExists(CloneEdit.Text) then
   begin
     RunCommand('/bin/bash', ['-c', 'du -sm "' + CloneEdit.Text +
@@ -232,31 +228,31 @@ begin
   else
   begin
     //Удаляем из списка знакомых носителей, чтобы не писать UUID повторно
-    StartProcess('if [[ -n $(VBoxManage list hdds | grep "' +
-      EditButton2.Text + '-Сlone.vdi") ]]; then VBoxManage closemedium "' +
-      EditButton2.Text + '-Clone.vdi"; fi', 'bash');
+    StartProcess('if VBoxManage list hdds | grep -Fq "' + EditButton2.Text +
+      '-Compressed.vdi"; then VBoxManage closemedium "' + EditButton2.Text +
+      '-Compressed.vdi"; fi', 'bash');
 
     //Удаляем результат работы предыдущей сессии
-    Str.Add('rm -f "' + ExtractFilePath(EditButton2.Text) + '"*-Сlone.vdi');
+    Str.Add('rm -f "' + ExtractFilePath(EditButton2.Text) + '"*-Compressed.vdi');
 
     //Получаем UUID оригинального диска VM
     Str.Add('HDUUID=$(VBoxManage showhdinfo "' + EditButton2.Text +
       '" | grep "UUID:" | head -n1 | awk ' + '''' + '{ print $2 }' + '''' + ')');
 
-    //Клонируем в DiskName.vdi-Clone.vdi
+    //Клонируем в DiskName.vdi-Compressed.vdi
     Str.Add('VBoxManage clonemedium "' + EditButton2.Text + '" "' +
-      EditButton2.Text + '"-Сlone.vdi --format VDI');
+      EditButton2.Text + '"-Compressed.vdi --format VDI');
 
     //Присваиваем родной UUID диску-клону
     Str.Add('VBoxManage internalcommands sethduuid "' + EditButton2.Text +
-      '-Сlone.vdi" $HDUUID');
+      '-Compressed.vdi" $HDUUID');
 
     //Удаляем из списка знакомых носителей, чтобы не писать UUID повторно
-    Str.Add('if [[ -n $(VBoxManage list hdds | grep "' + EditButton2.Text +
-      '-Сlone.vdi") ]]; then');
+    Str.Add('if VBoxManage list hdds | grep -Fq "' + EditButton2.Text +
+      '-Compressed.vdi"; then');
 
     Str.Add(Concat('VBoxManage closemedium disk "', EditButton2.Text,
-      '-Сlone.vdi"; fi'));
+      '-Compressed.vdi"; fi'));
   end;
 
   Str.SaveToFile(GetEnvironmentVariable('HOME') + '/.config/vdicomp/compress.sh');
@@ -278,7 +274,7 @@ end;
 procedure TMainForm.CloneCheckBoxChange(Sender: TObject);
 begin
   if CloneCheckBox.Checked and (EditButton2.Text <> '') then
-    CloneEdit.Text := EditButton2.Text + '-Сlone.vdi'
+    CloneEdit.Text := EditButton2.Text + '-Compressed.vdi'
   else
     CloneEdit.Text := '...';
 end;
@@ -290,7 +286,7 @@ begin
     EditButton2.Text := OpenDialog1.FileName;
 
     if CloneCheckBox.Checked then
-      CloneEdit.Text := EditButton2.Text + '-Сlone.vdi'
+      CloneEdit.Text := EditButton2.Text + '-Compressed.vdi'
     else
       CloneEdit.Text := '...';
   end;
@@ -316,11 +312,14 @@ begin
 
   IniPropStorage1.IniFileName :=
     GetEnvironmentVariable('HOME') + '/.config/vdicomp/vdicomp.ini';
+
+  showmessage( GetEnvironmentVariable('HOME'));
 end;
 
 procedure TMainForm.FormShow(Sender: TObject);
 begin
   MainForm.Caption := Application.Title;
+  EditButton2.Button.Width := EditButton2.Height;
   CompressBtn.Caption := SCompress;
 end;
 

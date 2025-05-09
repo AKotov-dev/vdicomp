@@ -56,9 +56,7 @@ msgid "..."
 msgstr ""
 
 #: tmainform.label1.caption
-msgid ""
-"License: GPLv3\n"
-"Author: alex_q_2000 (C) 2021"
+msgid "License: GPLv3  Author: alex_q_2000 (C) 2021"
 msgstr ""
 
 #: tmainform.label2.caption
